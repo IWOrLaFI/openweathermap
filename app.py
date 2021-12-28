@@ -1,21 +1,20 @@
 import sqlite3
 from flask import Flask, jsonify, request
 
-from sql_func import table_list_from_db, select_param_be_city
+from sql_func import table_list_from_db, select_param_be_city, select_weather_date_city
 
 app = Flask(__name__)
 file_db_name = 'db/weather.db'
 
 
-@app.route('/cities', methods=['GET'])
+@app.route('/cities', methods=['GET'])  # http://127.0.0.1:5000/cities
 def get_list():
     cities = table_list_from_db(file_db_name)
     return jsonify(cities)
 
 
-@app.route('/mean', methods=['GET'])
+@app.route('/mean', methods=['GET'])  # http://127.0.0.1:5000/mean?value_type=temp&city=dnipro
 def get_average_param():
-
     try:
         value_type = request.args['value_type']  # temp, pcp, clouds, pressure, humidity, wind_speed
         city = request.args['city']
@@ -31,6 +30,15 @@ def get_average_param():
                  'NAME_CITY = name city, ' \
                  'example: http://127.0.0.1:5000/mean?value_type=temp&city=dnipro'
         return jsonify(result)
+
+
+@app.route('/records', methods=['GET'])
+def get_records_param():  # http://127.0.0.1:5000/records?city=dnipro&start_dt=28-12-2021&end_dt=01-01-2022
+    city = request.args['city']
+    start_dt = request.args['start_dt']
+    end_dt = request.args['end_dt']
+    result = select_weather_date_city(file_db_name, city, start_dt, end_dt)
+    return jsonify(result)
 
 
 if __name__ == '__main__':

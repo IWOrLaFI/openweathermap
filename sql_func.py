@@ -70,7 +70,7 @@ def select_param_be_city(file_name, value_type, city_name):
     return result
 
 
-file_db_name = 'db/weather.db'
+# file_db_name = 'db/weather.db'
 
 
 def day_param_model(data):
@@ -99,5 +99,3 @@ def select_weather_date_city(file_name, city_name, start_dt, end_dt):
                 list_days.append(day_param_model(param[i]))
         db.commit()
     return list_days
-
-print(select_weather_date_city(file_db_name, 'Dnipro', '28-12-2021', '01-01-2022'))
