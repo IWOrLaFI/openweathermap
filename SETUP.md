@@ -13,7 +13,7 @@ cd openweathermap
 -
  python3 -m venv venv
 
-.venv/bin/activate
+source venv/bin/activate
 
 Or on Windows cmd:
 -
