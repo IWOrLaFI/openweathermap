@@ -64,7 +64,7 @@ def table_list_from_db(file_name):
 def select_param_be_city(file_name, value_type, city_name):
     with sqlite3.connect(file_name) as db:
         cursor = db.cursor()
-    query = f'SELECT {value_type} from {city_name} '
+    query = f'SELECT date, {value_type} from {city_name} '
     result = cursor.execute(query).fetchall()
     db.commit()
     return result
