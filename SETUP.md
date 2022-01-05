@@ -25,3 +25,16 @@ venv\Scripts\activate.bat
 Install all needed libraries, provided in requirements.txt:
 -
 pip install -r requirements.txt
+
+
+***
+For run server
+-
+python3 src/app.py
+
+***
+Test requests
+-
+python3 request_samples.py
+
+
