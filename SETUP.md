@@ -2,39 +2,46 @@ Be sure to use the Python version > 3.9.0.
 To install the application:
 -----------
 # clone the repository
-git clone https://github.com/IWOrLaFI/openweathermap.git
+
+created new folder and opened terminal there
+enter command:
+
+$ git clone https://github.com/IWOrLaFI/openweathermap.git
 
 ***
 
-cd openweathermap
+$ cd openweathermap
 
 ***
  Create a virtualenv and activate it:
 -
- python3 -m venv venv
+$ python3 -m venv venv
 
-source venv/bin/activate
+$ source venv/bin/activate
 
 Or on Windows cmd:
 -
-py -3 -m venv venv
+$ py -3 -m venv venv
 
-venv\Scripts\activate.bat
+$ venv\Scripts\activate.bat
 
 ***
 Install all needed libraries, provided in requirements.txt:
 -
-pip install -r requirements.txt
-
+$ pip install -r requirements.txt
 
 ***
-For run server
+For update db
 -
-python3 src/app.py
+$ python3 src/main.py
+***
+Run server
+-
+$ python3 src/app.py
 
 ***
 Test requests
 -
-python3 request_samples.py
+$ python3 request_samples.py
 
 
