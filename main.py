@@ -1,8 +1,6 @@
 from jsons_func import load_json, find_coord_city, weather_day
 from request_to_api_openweather import request_to_api
 from sql_func import delete_table, create_table_sql, added_info
-import datetime
-start_time1 = datetime.datetime.now()
 
 
 FILE_NAME_JSON = 'src/city.list.json'  # download file from http://bulk.openweathermap.org/sample/
@@ -29,4 +27,4 @@ def start():
 
 if __name__ == '__main__':
     start()
-    print(datetime.datetime.now() - start_time1)
+

@@ -28,6 +28,7 @@ def get_average_param():
         city = request.args['city']
         x = select_param_be_city(file_db_name, value_type, city)
         n = 0
+        i = 0
         for i in range(len(x)):
             n += x[i][1]
         result = round((n / (i + 1)), 2)
