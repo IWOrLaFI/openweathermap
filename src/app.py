@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request
 from sql_func import table_list_from_db, select_param_be_city, select_weather_date_city
 
 app = Flask(__name__)
-file_db_name = 'src/db/weather.db'
+file_db_name = 'db/weather.db'
 
 
 @app.route('/cities', methods=['GET'])  # http://127.0.0.1:5000/cities
