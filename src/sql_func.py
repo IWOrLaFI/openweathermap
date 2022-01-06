@@ -5,8 +5,8 @@ from datetime import datetime
 
 def delete_table(file_db_name='db/weather.db'):
     """
-    Func delete the file db
-    :return:
+    Func delete the file database
+    :return: message 'db delete'
     """
     try:
         return os.remove(file_db_name), print('db delete')
@@ -16,10 +16,10 @@ def delete_table(file_db_name='db/weather.db'):
 
 def create_table_sql(file_db_name, city_name):
     """
-    Create empty table. Name Table it's City's name.
+    Create empty table. Table's name  it's city's name.
     :param file_db_name:
     :param city_name: city's name
-    :return:
+    :return: message 'Table city_name is created'
     """
     with sqlite3.connect(file_db_name) as db:
         cursor = db.cursor()
@@ -42,7 +42,7 @@ def added_info(file_db_name, city_name, data):
     :param file_db_name:
     :param city_name: city's name
     :param data: data info -> weather_day(data)
-    :return:
+    :return: message 'added info {city_name}'
     """
     with sqlite3.connect(file_db_name) as db:
         cursor = db.cursor()
@@ -53,6 +53,10 @@ def added_info(file_db_name, city_name, data):
 
 
 def table_list_from_db(file_name):
+    """
+    Create table's list
+    :return:
+    """
     with sqlite3.connect(file_name) as db:
         cursor = db.cursor()
     query = 'SELECT name from sqlite_master where type= "table"'
@@ -62,16 +66,19 @@ def table_list_from_db(file_name):
 
 
 def select_param_be_city(file_name, value_type, city_name):
-    # with sqlite3.connect(file_name) as db:
-    with sqlite3.connect('db/weather.db') as db:
+    """
+    Select parameters in database and send it.
+    :param file_name: name file database
+    :param value_type: parameter
+    :param city_name: city name
+    :return: parameters
+    """
+    with sqlite3.connect(file_name) as db:
         cursor = db.cursor()
     query = f'SELECT date, {value_type} from {city_name} '
     result = cursor.execute(query).fetchall()
     db.commit()
     return result
-
-
-# file_db_name = 'db/weather.db'
 
 
 def day_param_model(data):
@@ -87,6 +94,14 @@ def day_param_model(data):
 
 
 def select_weather_date_city(file_name, city_name, start_dt, end_dt):
+    """
+    select date for find city weather
+    :param file_name: name database
+    :param city_name: city's name
+    :param start_dt: first (start) date
+    :param end_dt: lost (end) date
+    :return: list parameters days
+    """
     s_dt = datetime.strptime(start_dt, '%d-%m-%Y')
     e_dt = datetime.strptime(end_dt, '%d-%m-%Y')
     list_days = []

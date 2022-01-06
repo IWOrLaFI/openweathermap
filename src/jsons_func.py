@@ -71,7 +71,7 @@ def weather_day(data):
     def f_snow(day, data_json):
         """
          Find volume snow in data json
-         :param day: day number
+         :param day: date
          :param data_json: data json
          :return: Precipitation volume
          """
