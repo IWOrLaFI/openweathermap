@@ -3,8 +3,8 @@ from request_to_api_openweather import request_to_api
 from sql_func import delete_table, create_table_sql, added_info
 
 
-FILE_NAME_JSON = '../src/city.list.json'  # download file from http://bulk.openweathermap.org/sample/
-file_db_name = '../src/db/weather.db'
+FILE_NAME_JSON = 'city.list.json'  # download file from http://bulk.openweathermap.org/sample/
+file_db_name = 'db/weather.db'
 city_list = ('Dnipro', 'Kyiv', 'Lviv', 'Oleksandriya', 'Odessa')
 # list of cities to search. The number of cities is unlimited.
 
