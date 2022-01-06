@@ -62,7 +62,8 @@ def table_list_from_db(file_name):
 
 
 def select_param_be_city(file_name, value_type, city_name):
-    with sqlite3.connect(file_name) as db:
+    # with sqlite3.connect(file_name) as db:
+    with sqlite3.connect('db/weather.db') as db:
         cursor = db.cursor()
     query = f'SELECT date, {value_type} from {city_name} '
     result = cursor.execute(query).fetchall()

@@ -31,6 +31,10 @@ Install all needed libraries, provided in requirements.txt:
 $ pip install -r requirements.txt
 
 ***
+Open folder src
+-
+$ cd src
+***
 For update db
 -
 $ python3 src/main.py
