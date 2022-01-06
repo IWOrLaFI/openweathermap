@@ -7,7 +7,6 @@ app = Flask(__name__)
 file_db_name = '../src/db/weather.db'
 
 
-
 @app.route('/cities', methods=['GET'])  # http://127.0.0.1:5000/cities
 def get_list():
     """
