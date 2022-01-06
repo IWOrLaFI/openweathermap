@@ -37,11 +37,11 @@ $ cd src
 ***
 For update db
 -
-$ python3 src/main.py
+$ python3 main.py
 ***
 Run server
 -
-$ python3 src/app.py
+$ python3 app.py
 
 ***
 Test requests
