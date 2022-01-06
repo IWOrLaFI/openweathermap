@@ -46,6 +46,8 @@ $ python3 app.py
 ***
 Test requests
 -
+Open a second terminal in the folder src and enter command:
+
 $ python3 request_samples.py
 
 
